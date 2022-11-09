@@ -61,5 +61,9 @@ group :development do
   # gem "spring"
 end
 
+# CUSTOM GEMS
+gem "simple_form"
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]

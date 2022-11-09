@@ -1,0 +1,17 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p>Category: <%= @restaurant.category %></p>
+  <p>Address: <%= @restaurant.address %></p>
+  <p>Phone number: <%= @restaurant.phone_number %></p>
+  <p><%= link_to 'Add review', new_restaurant_review_path(@restaurant), class: 'btn btn-success' %></p>
+  <p><%= link_to 'Back', restaurants_path, class: 'btn btn-secondary'%></p>
+  <ul class="list-group">
+    <% if @restaurant.reviews.any? %>
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item"><%= "[Rating #{'⭐️' * review.rating}] #{review.content}" %></li>
+      <% end %>
+    <% else %>
+      <li class="list-group-item">No reviews yet</li>
+    <% end %>
+  </ul>
+</div>
